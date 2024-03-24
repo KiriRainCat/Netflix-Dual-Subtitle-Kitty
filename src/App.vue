@@ -7,12 +7,12 @@ import '@varlet/ui/es/input/style/index'
 import { Button as VarButton } from '@varlet/ui'
 import '@varlet/ui/es/button/style/index'
 
-const tickOffset = ref(990000)
-const subtitleBottomMargin = ref('2.6%')
+const tickOffset = ref(0)
+const subtitleBottomMargin = ref('3.8%')
 
 onBeforeMount(async () => {
-  tickOffset.value = (await chrome.storage.local.get('tickOffset'))['tickOffset'] ?? 990000
-  subtitleBottomMargin.value = (await chrome.storage.local.get('subtitleBottomMargin'))['subtitleBottomMargin'] ?? '2.6%'
+  tickOffset.value = (await chrome.storage.local.get('tickOffset'))['tickOffset'] ?? 0
+  subtitleBottomMargin.value = (await chrome.storage.local.get('subtitleBottomMargin'))['subtitleBottomMargin'] ?? '3.8%'
 })
 
 function handleSettingUpdate() {

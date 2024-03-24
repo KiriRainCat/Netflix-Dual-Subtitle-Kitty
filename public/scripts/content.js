@@ -21,7 +21,7 @@ const subtitleList = []
 let prevTick = 0
 let curSubtitleIdx = 0
 
-let tickOffset = 990000
+let tickOffset = 0
 let subtitleBottomMargin = '3.8%'
 
 /**
@@ -48,8 +48,8 @@ function findSubtitle(curTick) {
 }
 
 async function getVideoElement() {
-  tickOffset = (await chrome.storage.local.get('tickOffset'))['tickOffset'] ?? 990000
-  subtitleBottomMargin = (await chrome.storage.local.get('subtitleBottomMargin'))['subtitleBottomMargin'] ?? '2.6%'
+  tickOffset = (await chrome.storage.local.get('tickOffset'))['tickOffset'] ?? 0
+  subtitleBottomMargin = (await chrome.storage.local.get('subtitleBottomMargin'))['subtitleBottomMargin'] ?? '3.8%'
 
   video = document.querySelector('video')
   if (video == undefined) {
@@ -102,8 +102,8 @@ chrome.runtime.onMessage.addListener(async (msg) => {
   }
 
   if (msg === 'update') {
-    tickOffset = (await chrome.storage.local.get('tickOffset'))['tickOffset'] ?? 990000
-    subtitleBottomMargin = (await chrome.storage.local.get('subtitleBottomMargin'))['subtitleBottomMargin'] ?? '2.6%'
+    tickOffset = (await chrome.storage.local.get('tickOffset'))['tickOffset'] ?? 0
+    subtitleBottomMargin = (await chrome.storage.local.get('subtitleBottomMargin'))['subtitleBottomMargin'] ?? '3.8%'
     return
   }
 
