@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Varlet UI 组件变量
+:root {
+  --tooltip-font-size: 12px;
+  --tooltip-padding: 4px 8px;
+  --snackbar-width: 360px;
+  --snackbar-font-size: 13px;
+  --hover-overlay-opacity: 0;
+  --hover-overlay-focusing-opacity: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+// #region:    --- 滚动条样式
+
+// 定义滚动条高宽及背景
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+// 定义滚动条轨道
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+// 定义滑块
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #eee;
+}
+
+// #endregion: --- 滚动条样式

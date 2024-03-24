@@ -1,0 +1,35 @@
+{
+  "name": "Netflix Dual Subtitle Kitty",
+  "version": "0.1",
+  "description": "A small plugin used to enable dual subtitles on Netflix",
+  "author": "KiriRainCat",
+  "manifest_version": 3,
+  "permissions": ["webRequest", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "Netflix Dual Subtitle Kitty"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/watch/*"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/subtitle_retriever.js"
+  }
+}
